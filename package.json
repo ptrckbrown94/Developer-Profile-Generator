@@ -1,0 +1,19 @@
+{
+  "name": "developer-profile-generator",
+  "version": "1.0.0",
+  "description": "an easy way to generate a group bio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptrckbrown94/Developer-Profile-Generator.git"
+  },
+  "author": "Patrick Brown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ptrckbrown94/Developer-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/ptrckbrown94/Developer-Profile-Generator#readme"
+}
