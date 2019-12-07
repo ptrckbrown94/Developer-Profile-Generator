@@ -1,5 +1,6 @@
 /*
 color background
+
  Profile image
  User name
  Links to the following:
@@ -24,6 +25,7 @@ save Github username as an object
 
 */
 
+
 // I took this code from our inclass activity and Brian helped me write this
 const fs = require("fs");
 const axios = require("axios");
@@ -35,18 +37,20 @@ inquirer
     name: "username"
   })
   .then(function ({ username }) {
-    const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+    const queryUrl = `https://api.github.com/users/${username}`;
 
     axios.get(queryUrl)
       .then(function (response) {
         // handle success
-        console.log(response);
-        const repoName = response.data.map(function (repo) {
-          return repo.name;
-        })
+        console.log(response.data);
 
-        const repoNameString = repoName.join("/n")
+        newResume {
+            
+        }
+
 
       });
 
   });
+
+  resumeGenerator {}
