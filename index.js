@@ -42,21 +42,6 @@ inquirer
     axios.get(queryUrl)
       .then(function (response) {
         // handle success
-        console.log(response);
-
-        let newResume = {
-
-            profilePicture:"",
-            userName:"", 
-            location:"",
-            GitHubProfile:"",
-            userBlog:"",
-            userBio:"",
-            numberOfRepos:"",
-            numberFollowers:"",
-            numberGitHubStars:"",
-            numberFollowing:"",
-        }
 
         const profilePicture = response.data.avatar_url;
         const userName = response.data.name;
@@ -66,10 +51,26 @@ inquirer
         const userBio = response.data.bio;
         const numberOfRepos = response.data.public_repos;
         const numberFollowers = response.data.followers;
-        const numberFollowing = response.data.following; 
-        const numberGitHubStars = response.data. 
-        console.log()
+        const numberGitHubStars = response.data.starred_url;
+        const numberFollowing = response.data.following;
+
+
+        let newResume = {
+
+          profilePicture: response.data.avatar_url,
+          userName: response.data.name,
+          location: response.data.location,
+          GitHubProfile: response.data.blog,
+          userBlog: response.data.blog,
+          userBio: response.data.bio,
+          numberOfRepos: response.data.public_repos,
+          numberFollowers: response.data.followers,
+          numberGitHubStars: response.data.starred_url,
+          numberFollowing: response.data.following,
+        };
+
       });
+
 
   });
 
