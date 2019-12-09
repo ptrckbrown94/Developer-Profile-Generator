@@ -42,16 +42,34 @@ inquirer
     axios.get(queryUrl)
       .then(function (response) {
         // handle success
-        console.log(response.data);
+        console.log(response);
 
-        newResume {
-            
+        let newResume = {
 
+            profilePicture:"",
+            userName:"", 
+            location:"",
+            GitHubProfile:"",
+            userBlog:"",
+            userBio:"",
+            numberOfRepos:"",
+            numberFollowers:"",
+            numberGitHubStars:"",
+            numberFollowing:"",
         }
 
-
+        const profilePicture = response.data.avatar_url;
+        const userName = response.data.name;
+        const location = response.data.location;
+        const GitHubProfile = response.data.url;
+        const userBlog = response.data.blog;
+        const userBio = response.data.bio;
+        const numberOfRepos = response.data.public_repos;
+        const numberFollowers = response.data.followers;
+        const numberFollowing = response.data.following; 
+        const numberGitHubStars = response.data. 
+        console.log()
       });
 
   });
 
-  resumeGenerator {}
