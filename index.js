@@ -30,6 +30,7 @@ save Github username as an object
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
+const generatedHTML = require("./generateHTML");
 
 inquirer
   .prompt({
@@ -55,7 +56,7 @@ inquirer
         const numberFollowing = response.data.following;
 
 
-        let newResume = {
+        const newResume = {
 
           profilePicture: response.data.avatar_url,
           userName: response.data.name,
@@ -66,10 +67,11 @@ inquirer
           numberOfRepos: response.data.public_repos,
           numberFollowers: response.data.followers,
           numberGitHubStars: response.data.starred_url,
-          numberFollowing: response.data.following,
+          numberFollowing: response.data.following
         };
-
+        console.log(newResume)
       });
+
 
 
   });
