@@ -30,7 +30,7 @@ save Github username as an object
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-const generatedHTML = require("./generateHTML");
+const generateHTML = require("./generateHTML");
 
 inquirer
   .prompt({
@@ -70,9 +70,10 @@ inquirer
           numberFollowing: response.data.following
         };
         console.log(newResume)
+        console.log(generateHTML.generateHTML())
       });
 
-
+      
 
   });
 

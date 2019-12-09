@@ -170,5 +170,22 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
-        }
+      
+      
+      </style>
+    
+    </head>
+         
+    <body>
+    
+    </body>
+  
+  </html>`
+
+}
+
+exports.generateHTML = generateHTML
+exports.test = "hello"
+
+
+
