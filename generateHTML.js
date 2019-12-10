@@ -184,7 +184,9 @@ function generateHTML(data) {
   <p>${data.userBlog}</p>
   <p>${data.userBio}</p>
   <p>'stars</p>
-  <p>'stars</p>
+  <p>${data.numberOfRepos}</p>
+  <p>${data.numberFollowers}</p>
+  <p>${data.numberFollowing}</p>
     </body>
   
   </html>`
