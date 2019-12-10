@@ -177,15 +177,22 @@ function generateHTML(data) {
     </head>
          
     <body>
-    
+    <img src=${data.profilePicture}></img>  
+  <p>${data.userName}</p>
+  <p>${data.location}</p>
+  <p>${data.GitHubProfile}</p>
+  <p>${data.userBlog}</p>
+  <p>${data.userBio}</p>
+  <p>'stars</p>
+  <p>'stars</p>
     </body>
   
   </html>`
 
 }
 
-exports.generateHTML = generateHTML
-exports.test = "hello"
+module.exports = generateHTML
+
 
 
 

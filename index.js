@@ -27,10 +27,19 @@ save Github username as an object
 
 
 // I took this code from our inclass activity and Brian helped me write this
-const fs = require("fs");
+//const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
 const generateHTML = require("./generateHTML");
+
+
+const fs = require('fs'),
+    convertFactory = require('electron-html-to');
+ 
+const conversion = convertFactory({
+  converterPath: convertFactory.converters.PDF
+});
+
 
 inquirer
   .prompt({
@@ -55,7 +64,9 @@ inquirer
         const numberGitHubStars = response.data.starred_url;
         const numberFollowing = response.data.following;
 
-
+        const color = "blue"
+        const stars = 13
+        // call a function to calculate  var stars = calculatestars(github)
         const newResume = {
 
           profilePicture: response.data.avatar_url,
@@ -69,11 +80,41 @@ inquirer
           numberGitHubStars: response.data.starred_url,
           numberFollowing: response.data.following
         };
+
+        // stars api call for repos summary of all stars
+        // will use 4 loop, should be in an array
         console.log(newResume)
-        console.log(generateHTML.generateHTML())
+        const resume = generateHTML({stars,color, ...newResume})
+        console.log(resume)
+        // write to file resume.html
+        // convert from html to PDF
+        conversion({ html: resume }, function(err, result) {
+          if (err) {
+            return console.error(err);
+          }
+         
+          console.log(result.numberOfPages);
+          console.log(result.logs);
+          result.stream.pipe(fs.createWriteStream('./resume.pdf'));
+          conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
+        });
+
       });
 
       
 
   });
 
+  
+/**
+ * https://github.com/bjrmatos/electron-html-to/issues/459
+ * 
+ * There is a compatability issue witht the newest versions.
+ * 
+ * Make sure to use:
+ * "electron": "^5.0.12",
+ * "electron-html-to": "^2.6.0".
+ * 
+ */
+
+ 
