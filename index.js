@@ -31,8 +31,6 @@ save Github username as an object
 const axios = require("axios");
 const inquirer = require("inquirer");
 const generateHTML = require("./generateHTML");
-
-
 const fs = require('fs'),
     convertFactory = require('electron-html-to');
  
@@ -52,7 +50,7 @@ inquirer
     axios.get(queryUrl)
       .then(function (response) {
         // handle success
-
+        console.log(response.data)
         const profilePicture = response.data.avatar_url;
         const userName = response.data.name;
         const location = response.data.location;
