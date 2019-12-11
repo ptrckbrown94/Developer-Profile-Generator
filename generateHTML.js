@@ -181,7 +181,8 @@ function generateHTML(data) {
       <h1>Hello</h1>
       <p>${data.userName}</p>
       <p>${data.location}</p>
-      <p>${data.GitHubProfile}</p>
+      <p>${data.gitHubProfile}</p>
+      <p>${data.company}</p>
       <p>${data.userBlog}</p>
       <p>${data.userBio}</p>
       <p>${data.numberGitHubStars}</p>

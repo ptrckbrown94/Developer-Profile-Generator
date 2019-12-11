@@ -207,46 +207,50 @@
 
 </head>
 
-<body>
-  <img src='${data.profilePicture}'></img>
-  <h1>Hello</h1>
-  <h2>My name is ${data.userName}!</h2>
-  <h4></h4>
-  <h3>${data.userBio}</h3>
-  <p>'stars</p>
+  <body>
+ 
+    <header><img src="${data.profilePicture}" class="" alt="profile photo"></header>
 
-  <div class="row">
+    <h1>Hello</h1>
+    <h2>My name is ${data.userName}!</h2>
+    <h4> Currently @ ${data.company}</h4>
+    <h5>
+        <a href="url">Location</a>
+        <a href="${data.gitHubProfile}">Github</a>
+        <a href="${data.userBlog}">Blog</a> 
+    </h5>
+    <h3>${data.userBio}</h3>
+    <p>'stars</p>
+
+    <div class="row">
+      <div class="card">
+        <div class="container">
+          <h4><b>Public Repositories</b></h4>
+          <p>${data.numberOfRepos}</p>
+        </div>
+      </div>
+    </div>
+
     <div class="card">
       <div class="container">
-        <h4><b>Public Repositories</b></h4>
+        <h4><b>Followers</b></h4>
         <p>${data.numberOfRepos}</p>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="container">
-      <h4><b>Followers</b></h4>
-      <p>${data.numberOfRepos}</p>
+    <div class="card">
+      <div class="container">
+        <h4><b>Github Stars</b></h4>
+        <p>${data.numberOfRepos}</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="container">
-      <h4><b>Github Stars</b></h4>
-      <p>${data.numberOfRepos}</p>
+    <div class="card">
+      <div class="container">
+        <h4><b>Following</b></h4>
+        <p>${data.numberOfRepos}</p>
+      </div>
     </div>
-  </div>
-
-  <div class="card">
-    <div class="container">
-      <h4><b>Following</b></h4>
-      <p>${data.numberOfRepos}</p>
-    </div>
-  </div>
-
-
-
 
 
 </body>

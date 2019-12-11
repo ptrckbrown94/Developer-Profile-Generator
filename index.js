@@ -1,6 +1,5 @@
 /*
 color background
-
  Profile image
  User name
  Links to the following:
@@ -12,19 +11,13 @@ color background
  Number of followers
  Number of GitHub stars
  Number of users following
-
 */
 
 /*
 save Github username as an object
     key of user name and value of github username
     object with above categories
-
-
-
-
 */
-
 
 // I took this code from our inclass activity and Brian helped me write this
 //const fs = require("fs");
@@ -60,7 +53,8 @@ inquirer
         const profilePicture = response.data.avatar_url;
         const userName = response.data.name;
         const location = response.data.location;
-        const GitHubProfile = response.data.url;
+        const career = response.data.company;
+        const gitHubProfile = response.data.url;
         const userBlog = response.data.blog;
         const userBio = response.data.bio;
         const numberOfRepos = response.data.public_repos;
@@ -74,10 +68,12 @@ inquirer
         const newResume = {
 
           profilePicture: response.data.avatar_url,
+
           userName: response.data.name,
           location: response.data.location,
-          GitHubProfile: response.data.blog,
+          gitHubProfile: response.data.blog,
           userBlog: response.data.blog,
+          career: response.data.company,
           userBio: response.data.bio,
           numberOfRepos: response.data.public_repos,
           numberFollowers: response.data.followers,
