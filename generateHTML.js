@@ -177,16 +177,17 @@ function generateHTML(data) {
     </head>
          
     <body>
-    <img src="${data.profilePicture}"></img>  
-  <p>${data.userName}</p>
-  <p>${data.location}</p>
-  <p>${data.GitHubProfile}</p>
-  <p>${data.userBlog}</p>
-  <p>${data.userBio}</p>
-  <p>${data.numberGitHubStars}</p>
-  <p>${data.numberOfRepos}</p>
-  <p>${data.numberFollowers}</p>
-  <p>${data.numberFollowing}</p>
+      <img src="${data.profilePicture}"></img>  
+      <h1>Hello</h1>
+      <p>${data.userName}</p>
+      <p>${data.location}</p>
+      <p>${data.GitHubProfile}</p>
+      <p>${data.userBlog}</p>
+      <p>${data.userBio}</p>
+      <p>${data.numberGitHubStars}</p>
+      <p>${data.numberOfRepos}</p>
+      <p>${data.numberFollowers}</p>
+      <p>${data.numberFollowing}</p>
     </body>
   
   </html>`
