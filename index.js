@@ -23,7 +23,7 @@ save Github username as an object
 //const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-const generateHTML = require("./generateHTML");
+const generateHTML = require("./generateHTML.js");
 const fs = require('fs'),
     convertFactory = require('electron-html-to');
  
@@ -40,10 +40,10 @@ inquirer
   },
   {
     message: "Pick a color",
-    name: "color"
+    name: "color_desired"
   
   }])
-  .then(function ({ username, color}) {
+  .then(function ({username, color_desired}) {
     const queryUrl = `https://api.github.com/users/${username}`;
 
     axios.get(queryUrl)
@@ -62,18 +62,18 @@ inquirer
         const numberGitHubStars = response.data.starred_url;
         const numberFollowing = response.data.following;
 
-        const color = colors
-        const stars = 13
+        const color = color_desired; 
+        const stars = 12500
         // call a function to calculate  var stars = calculatestars(github)
         const newResume = {
 
           profilePicture: response.data.avatar_url,
-
+          company: response.data.company,
           userName: response.data.name,
           location: response.data.location,
           gitHubProfile: response.data.blog,
           userBlog: response.data.blog,
-          career: response.data.company,
+          career: response.data.career,
           userBio: response.data.bio,
           numberOfRepos: response.data.public_repos,
           numberFollowers: response.data.followers,
@@ -84,7 +84,10 @@ inquirer
         // stars api call for repos summary of all stars
         // will use 4 loop, should be in an array
         console.log(newResume)
-        const resume = generateHTML({stars,colors, ...newResume})
+        console.log("color" + color_desired) 
+         console.log(generateHTML({stars,color, ...newResume}))
+        const resume = generateHTML({stars, color, ...newResume})
+      
         console.log(resume)
         // write to file resume.html
         // convert from html to PDF

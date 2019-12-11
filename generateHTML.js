@@ -177,25 +177,58 @@ function generateHTML(data) {
     </head>
          
     <body>
-      <img src="${data.profilePicture}"></img>  
-      <h1>Hello</h1>
-      <p>${data.userName}</p>
-      <p>${data.location}</p>
-      <p>${data.gitHubProfile}</p>
-      <p>${data.company}</p>
-      <p>${data.userBlog}</p>
-      <p>${data.userBio}</p>
-      <p>${data.numberGitHubStars}</p>
-      <p>${data.numberOfRepos}</p>
-      <p>${data.numberFollowers}</p>
-      <p>${data.numberFollowing}</p>
-    </body>
+ 
+    <header><img src="${data.profilePicture}" class="" alt="profile photo"></header>
+
+    <h1>Hello</h1>
+    <h2>My name is ${data.userName}!</h2>
+    <h4> Currently @ ${data.company}</h4>
+    <h5>
+        <a href="url">${data.location}</a>
+        <a href="${data.gitHubProfile}">Github</a>
+        <a href="${data.userBlog}">Blog</a> 
+    </h5>
+    <h3>${data.userBio}</h3>
+   
+
+    <div class="row">
+      <div class="card">
+        <div class="container">
+          <h4><b>Public Repositories</b></h4>
+          <p>${data.numberOfRepos}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="container">
+        <h4><b>Followers</b></h4>
+        <p>${data.numberFollowers}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="container">
+        <h4><b>Github Stars</b></h4>
+        <p>${data.stars}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="container">
+        <h4><b>Following</b></h4>
+        <p>${data.numberFollowing}</p>
+      </div>
+    </div>
+
+</body>
   
   </html>`
 
 }
 
 module.exports = generateHTML
+
 
 
 
