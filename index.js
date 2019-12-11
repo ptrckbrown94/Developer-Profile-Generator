@@ -40,11 +40,17 @@ const conversion = convertFactory({
 
 
 inquirer
-  .prompt({
+  .prompt([{
     message: "Enter your GitHub username",
     name: "username"
-  })
-  .then(function ({ username }) {
+    
+  },
+  {
+    message: "Pick a color",
+    name: "color"
+  
+  }])
+  .then(function ({ username, color}) {
     const queryUrl = `https://api.github.com/users/${username}`;
 
     axios.get(queryUrl)
@@ -62,7 +68,7 @@ inquirer
         const numberGitHubStars = response.data.starred_url;
         const numberFollowing = response.data.following;
 
-        const color = "blue"
+        const color = colors
         const stars = 13
         // call a function to calculate  var stars = calculatestars(github)
         const newResume = {
@@ -82,7 +88,7 @@ inquirer
         // stars api call for repos summary of all stars
         // will use 4 loop, should be in an array
         console.log(newResume)
-        const resume = generateHTML({stars,color, ...newResume})
+        const resume = generateHTML({stars,colors, ...newResume})
         console.log(resume)
         // write to file resume.html
         // convert from html to PDF
